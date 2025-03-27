@@ -1,0 +1,32 @@
+name: ci
+
+on:
+  pull_request:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+env:
+  CARGO_TERM_COLOR: always
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref_name }}-${{ github.event.pull_request.number || github.sha }}
+  cancel-in-progress: true
+
+permissions: {}
+
+jobs:
+  cargo:
+    uses: vexxhost/github-actions/.github/workflows/cargo.yml@main
+
+  image:
+    uses: vexxhost/github-actions/.github/workflows/image.yml@main
+    with:
+      image-ref: ghcr.io/${{ github.repository_owner }}/multipathd-exporter
+      push: ${{ github.ref == 'refs/heads/main' }}
+      tags: |
+        type=sha
+        type=edge
+        type=edge,suffix=-{{date 'X'}}
+        type=semver,pattern={{version}}
+        type=semver,pattern={{major}}.{{minor}}
