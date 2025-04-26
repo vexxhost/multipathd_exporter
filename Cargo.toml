@@ -1,6 +1,6 @@
 [package]
-name = "multipathd_exporter"
-version = "0.1.0"
+name = "multipathd-exporter"
+version = "0.0.0"
 edition = "2024"
 
 [workspace]

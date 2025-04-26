@@ -386,6 +386,19 @@ dependencies = [
 ]
 
 [[package]]
+name = "multipathd-exporter"
+version = "0.0.0"
+dependencies = [
+ "axum",
+ "multipathd-structs",
+ "prometheus",
+ "serde_json",
+ "strum",
+ "tokio",
+ "tracing-subscriber",
+]
+
+[[package]]
 name = "multipathd-structs"
 version = "0.1.0"
 dependencies = [
@@ -395,19 +408,6 @@ dependencies = [
  "serde_json",
  "strum",
  "strum_macros",
-]
-
-[[package]]
-name = "multipathd_exporter"
-version = "0.1.0"
-dependencies = [
- "axum",
- "multipathd-structs",
- "prometheus",
- "serde_json",
- "strum",
- "tokio",
- "tracing-subscriber",
 ]
 
 [[package]]
