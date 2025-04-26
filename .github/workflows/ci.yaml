@@ -35,5 +35,5 @@ jobs:
         type=sha
         type=edge
         type=edge,suffix=-{{date 'X'}}
-        type=semver,pattern={{version}}
-        type=semver,pattern={{major}}.{{minor}}
+        type=match,pattern=multipathd-exporter-v(.*),group=1
+        type=match,pattern=multipathd-exporter-v(.*),group=1,value=latest
