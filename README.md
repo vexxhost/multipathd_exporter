@@ -1,2 +1,3 @@
-# `multipath_exporter`
-Prometheus exporter for `multipath`
+# `multipathd_exporter`
+
+Prometheus exporter for `multipathd`
