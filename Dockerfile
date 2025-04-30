@@ -1,4 +1,4 @@
-FROM rust:1.86.0@sha256:13e89107e40a1b008fd5f4f23e0737eb655d09f179036d029ee77f0bd465b51a AS builder
+FROM rust:1.86.0@sha256:640960fe15de2f67cc88db7f0f547977cb759cba9eab246df29d98d02aaf24b8 AS builder
 ADD . /app
 WORKDIR /app
 RUN cargo build --release
