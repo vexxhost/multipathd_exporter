@@ -62,7 +62,6 @@
             pkgs.buildRustCrate.override {
               rustc = pkgs.rust-bin.stable.latest.default;
               cargo = pkgs.rust-bin.stable.latest.default;
-
             };
         };
       in
@@ -97,7 +96,6 @@
             };
           };
         };
-
       }
     );
 }
