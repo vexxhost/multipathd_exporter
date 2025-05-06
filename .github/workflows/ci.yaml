@@ -21,19 +21,10 @@ jobs:
     uses: vexxhost/github-actions/.github/workflows/cargo.yml@main
 
   image:
-    uses: vexxhost/github-actions/.github/workflows/image.yml@main
+    uses: vexxhost/github-actions/.github/workflows/nix-image.yaml@main
     permissions:
-      actions: read
-      contents: write
       id-token: write
+      contents: read
       packages: write
-      security-events: write
     with:
-      image-ref: ghcr.io/${{ github.repository_owner }}/multipathd-exporter
       push: ${{ github.event_name == 'push' || github.event_name == 'workflow_dispatch' }}
-      tags: |
-        type=sha
-        type=edge
-        type=edge,suffix=-{{date 'X'}}
-        type=match,pattern=multipathd-exporter-v(.*),group=1
-        type=match,pattern=multipathd-exporter-v(.*),group=1,value=latest
