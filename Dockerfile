@@ -3,7 +3,7 @@ ADD . /app
 WORKDIR /app
 RUN cargo build --release
 
-FROM rust:1.86.0-slim@sha256:2608715787b664985445643bd7ebc25e7c180e2e51d971b204b3f976c89dfa68 AS runtime
+FROM rust:1.86.0-slim@sha256:57d415bbd61ce11e2d5f73de068103c7bd9f3188dc132c97cef4a8f62989e944 AS runtime
 RUN \
   --mount=type=cache,target=/var/cache/apt,sharing=locked \
   --mount=type=cache,target=/var/lib/apt,sharing=locked \
