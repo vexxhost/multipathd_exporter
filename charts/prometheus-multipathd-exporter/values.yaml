@@ -8,7 +8,7 @@ image:
   repository: ghcr.io/vexxhost/multipathd-exporter
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "edge"
+  tag: "edge@sha256:4f31bafcda34dc0794208768cf4dbc8738f03628618bfb16fb2b1a280b6ddaea"
 
 imagePullSecrets: []
 nameOverride: ""
