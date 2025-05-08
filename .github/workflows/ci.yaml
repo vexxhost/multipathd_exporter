@@ -50,7 +50,7 @@ jobs:
       - run: go install github.com/norwoodj/helm-docs/cmd/helm-docs@latest
       - uses: pre-commit/action@v3.0.1
       - uses: stefanzweifel/git-auto-commit-action@v5
-        if: github.event_name == 'pull_request' && github.event.pull_request.user.id == '29139614'
+        if: github.event_name == 'pull_request' && github.event.pull_request.user.id == '29139614' && always()
         with:
           commit_message: "chore: apply pre-commit hook updates"
           commit_author: "renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>"
