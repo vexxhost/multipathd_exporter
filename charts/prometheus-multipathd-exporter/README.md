@@ -20,7 +20,7 @@ A Helm chart for multipathd_exporter
 | hostNetwork | bool | `true` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | image.repository | string | `"ghcr.io/vexxhost/multipathd-exporter"` |  |
-| image.tag | string | `"edge@sha256:4f31bafcda34dc0794208768cf4dbc8738f03628618bfb16fb2b1a280b6ddaea"` |  |
+| image.tag | string | `"edge@sha256:0520a4ce5a4fb879b0bbaea1d14cdc036c03b307ce3ede47d817612a7878449e"` |  |
 | imagePullSecrets | list | `[]` |  |
 | nameOverride | string | `""` |  |
 | nodeSelector | object | `{}` |  |
