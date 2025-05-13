@@ -20,7 +20,22 @@ jobs:
   cargo:
     uses: vexxhost/github-actions/.github/workflows/cargo.yml@main
 
+  prepare-version:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.get-version.outputs.version }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: get-version
+        run: |
+          VERSION=""
+          if [[ "${GITHUB_REF}" == refs/tags/multipathd-exporter-v* ]]; then
+            VERSION="${GITHUB_REF#refs/tags/multipathd-exporter-v}"
+          fi
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
   image:
+    needs: [cargo, prepare-version]
     uses: vexxhost/github-actions/.github/workflows/nix-image.yaml@main
     permissions:
       id-token: write
@@ -28,6 +43,11 @@ jobs:
       packages: write
     with:
       push: ${{ github.event_name == 'push' || github.event_name == 'workflow_dispatch' }}
+      tags: |
+        ${{ needs.prepare-version.outputs.version && format('type=raw,value={0}', needs.prepare-version.outputs.version) || '' }}
+        type=sha
+        type=edge
+        type=edge,suffix=-{{date 'X'}}
 
   chart-testing-lint:
     runs-on: ubuntu-latest
