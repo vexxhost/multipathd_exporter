@@ -83,6 +83,7 @@
 
           dockerImage = nix2containerPkgs.nix2container.buildImage {
             name = "ghcr.io/vexxhost/multipathd-exporter";
+            tag = version;
             maxLayers = 64;
             copyToRoot = with pkgs.dockerTools; [
               pkgs.multipath-tools
