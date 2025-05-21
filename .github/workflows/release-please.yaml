@@ -13,6 +13,9 @@ permissions:
 jobs:
   release-please:
     runs-on: ubuntu-latest
+    outputs:
+      release_created: ${{ steps.release.outputs.release_created }}
+      release_version: ${{ steps.release.outputs.version }}
     permissions:
       packages: write
       contents: write
@@ -32,3 +35,16 @@ jobs:
           registry: ghcr.io
           registry_username: ${{ github.actor }}
           registry_password: ${{ secrets.GITHUB_TOKEN }}
+
+  build-image:
+    needs: release-please
+    if: ${{ needs.release-please.outputs.release_created == 'true' }}
+    uses: vexxhost/github-actions/.github/workflows/nix-image.yaml@main
+    permissions:
+      id-token: write
+      contents: read
+      packages: write
+    with:
+      push: ${{ github.event_name == 'push' || github.event_name == 'workflow_dispatch' }}
+      tags: |
+        type=raw,value=${{ needs.release-please.outputs.release_version }}
