@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/vexxhost/multipathd_exporter/compare/multipathd-exporter-v0.2.0...multipathd-exporter-v0.2.1) (2025-05-25)
+
+
+### Bug Fixes
+
+* **deps:** update rust crate tokio to v1.45.1 ([#32](https://github.com/vexxhost/multipathd_exporter/issues/32)) ([46d2e79](https://github.com/vexxhost/multipathd_exporter/commit/46d2e794349a28c9f3b6a244c03f401b71493872))
+
 ## [0.2.0](https://github.com/vexxhost/multipathd_exporter/compare/multipathd-exporter-v0.1.0...multipathd-exporter-v0.2.0) (2025-05-08)
 
 
