@@ -3,7 +3,7 @@ name: prometheus-multipathd-exporter
 description: A Helm chart for multipathd_exporter
 type: application
 version: 1.0.0
-appVersion: 0.2.0
+appVersion: 0.2.1
 maintainers:
   - name: larainema
     email: dong.ma@vexxhost.com
