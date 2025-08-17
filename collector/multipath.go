@@ -11,7 +11,7 @@ import (
 
 	"github.com/prometheus/client_golang/prometheus"
 
-	"github.com/vexxhost/multipath_exporter/internal/multipath"
+	"github.com/vexxhost/multipathd_exporter/internal/multipath"
 )
 
 type MultipathCollector struct {

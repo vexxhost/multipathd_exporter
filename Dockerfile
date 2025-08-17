@@ -6,9 +6,9 @@ WORKDIR /src
 COPY go.mod go.sum /src/
 RUN go mod download
 COPY . /src
-RUN CGO_ENABLED=0 go build -o /multipath_exporter
+RUN CGO_ENABLED=0 go build -o /multipathd_exporter
 
 FROM scratch
-COPY --from=builder /multipath_exporter /bin/multipath_exporter
+COPY --from=builder /multipathd_exporter /bin/multipathd_exporter
 EXPOSE 9282
-ENTRYPOINT ["/bin/multipath_exporter"]
+ENTRYPOINT ["/bin/multipathd_exporter"]

@@ -16,7 +16,7 @@ import (
 	"github.com/prometheus/exporter-toolkit/web"
 	webflag "github.com/prometheus/exporter-toolkit/web/kingpinflag"
 
-	"github.com/vexxhost/multipath_exporter/collector"
+	"github.com/vexxhost/multipathd_exporter/collector"
 )
 
 var (
@@ -31,13 +31,13 @@ func main() {
 	promslogConfig := &promslog.Config{}
 	flag.AddFlags(kingpin.CommandLine, promslogConfig)
 
-	kingpin.Version(version.Print("multipath_exporter"))
+	kingpin.Version(version.Print("multipathd_exporter"))
 	kingpin.HelpFlag.Short('h')
 	kingpin.Parse()
 
 	logger := promslog.New(promslogConfig)
 
-	logger.Info("Starting multipath_exporter", "version", version.Info())
+	logger.Info("Starting multipathd_exporter", "version", version.Info())
 	logger.Info("Build context", "build_context", version.BuildContext())
 
 	reg := prometheus.NewRegistry()

@@ -1,4 +1,4 @@
-module github.com/vexxhost/multipath_exporter
+module github.com/vexxhost/multipathd_exporter
 
 go 1.24.5
 
