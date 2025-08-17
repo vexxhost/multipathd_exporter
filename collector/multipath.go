@@ -30,25 +30,25 @@ func NewMultipathCollector(logger *slog.Logger) prometheus.Collector {
 		pathGroupDeviceMapperState: prometheus.NewDesc(
 			prometheus.BuildFQName("multipath", "path_group", "device_mapper_state"),
 			"Group device mapper state of the multipath path",
-			[]string{"map", "group"},
+			[]string{"map", "group", "state"},
 			nil,
 		),
 		pathDeviceMapperState: prometheus.NewDesc(
 			prometheus.BuildFQName("multipath", "path", "device_mapper_state"),
 			"Device mapper state of the multipath path",
-			[]string{"map", "group", "target_wwnn", "dev"},
+			[]string{"map", "group", "target_wwnn", "dev", "state"},
 			nil,
 		),
 		pathDeviceState: prometheus.NewDesc(
 			prometheus.BuildFQName("multipath", "path", "device_state"),
 			"Device state of the multipath path",
-			[]string{"map", "group", "target_wwnn", "dev"},
+			[]string{"map", "group", "target_wwnn", "dev", "state"},
 			nil,
 		),
 		pathCheckerState: prometheus.NewDesc(
 			prometheus.BuildFQName("multipath", "path", "checker_state"),
 			"Checker state of the multipath path",
-			[]string{"map", "group", "target_wwnn", "dev"},
+			[]string{"map", "group", "target_wwnn", "dev", "state"},
 			nil,
 		),
 	}
