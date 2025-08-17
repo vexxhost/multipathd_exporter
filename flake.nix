@@ -77,6 +77,12 @@
             '');
           };
 
+        devShell = pkgs.mkShell {
+          buildInputs = with pkgs; [
+            go
+          ];
+        };
+
         packages = rec {
           multipathd-exporter = cargoNix.workspaceMembers.multipathd-exporter.build;
           default = packages.multipathd-exporter;
