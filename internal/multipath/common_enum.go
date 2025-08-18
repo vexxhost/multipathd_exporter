@@ -252,10 +252,12 @@ func (x *PathDeviceMapperState) AppendText(b []byte) ([]byte, error) {
 }
 
 const (
+	// PathGroupDeviceMapperStateEnabled is a PathGroupDeviceMapperState of type enabled.
+	PathGroupDeviceMapperStateEnabled PathGroupDeviceMapperState = "enabled"
+	// PathGroupDeviceMapperStateDisabled is a PathGroupDeviceMapperState of type disabled.
+	PathGroupDeviceMapperStateDisabled PathGroupDeviceMapperState = "disabled"
 	// PathGroupDeviceMapperStateActive is a PathGroupDeviceMapperState of type active.
 	PathGroupDeviceMapperStateActive PathGroupDeviceMapperState = "active"
-	// PathGroupDeviceMapperStateFailed is a PathGroupDeviceMapperState of type failed.
-	PathGroupDeviceMapperStateFailed PathGroupDeviceMapperState = "failed"
 	// PathGroupDeviceMapperStateUndef is a PathGroupDeviceMapperState of type undef.
 	PathGroupDeviceMapperStateUndef PathGroupDeviceMapperState = "undef"
 )
@@ -263,8 +265,9 @@ const (
 var ErrInvalidPathGroupDeviceMapperState = fmt.Errorf("not a valid PathGroupDeviceMapperState, try [%s]", strings.Join(_PathGroupDeviceMapperStateNames, ", "))
 
 var _PathGroupDeviceMapperStateNames = []string{
+	string(PathGroupDeviceMapperStateEnabled),
+	string(PathGroupDeviceMapperStateDisabled),
 	string(PathGroupDeviceMapperStateActive),
-	string(PathGroupDeviceMapperStateFailed),
 	string(PathGroupDeviceMapperStateUndef),
 }
 
@@ -278,8 +281,9 @@ func PathGroupDeviceMapperStateNames() []string {
 // PathGroupDeviceMapperStateValues returns a list of the values for PathGroupDeviceMapperState
 func PathGroupDeviceMapperStateValues() []PathGroupDeviceMapperState {
 	return []PathGroupDeviceMapperState{
+		PathGroupDeviceMapperStateEnabled,
+		PathGroupDeviceMapperStateDisabled,
 		PathGroupDeviceMapperStateActive,
-		PathGroupDeviceMapperStateFailed,
 		PathGroupDeviceMapperStateUndef,
 	}
 }
@@ -297,9 +301,10 @@ func (x PathGroupDeviceMapperState) IsValid() bool {
 }
 
 var _PathGroupDeviceMapperStateValue = map[string]PathGroupDeviceMapperState{
-	"active": PathGroupDeviceMapperStateActive,
-	"failed": PathGroupDeviceMapperStateFailed,
-	"undef":  PathGroupDeviceMapperStateUndef,
+	"enabled":  PathGroupDeviceMapperStateEnabled,
+	"disabled": PathGroupDeviceMapperStateDisabled,
+	"active":   PathGroupDeviceMapperStateActive,
+	"undef":    PathGroupDeviceMapperStateUndef,
 }
 
 // ParsePathGroupDeviceMapperState attempts to convert a string to a PathGroupDeviceMapperState.

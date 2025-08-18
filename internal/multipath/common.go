@@ -9,7 +9,7 @@ package multipath
 //
 //	https://github.com/opensvc/multipath-tools/blob/master/libmultipath/print.c#L623-L636
 //
-// ENUM(active, failed, undef)
+// ENUM(enabled, disabled, active, undef)
 type PathGroupDeviceMapperState string
 
 // NOTE(mnaser): This was retrieved from the following, in case we missed any:
@@ -28,7 +28,7 @@ type DeviceState string
 
 // NOTE(mnaser): This was retrieved from the following, in case we missed any:
 //
-//	https://github.com/opensvc/multipath-tools/blob/master/libmultipath/print.c#L523-L547
+//	https://github.com/opensvc/multipath-tools/blob/master/libmultipath/print.c#L638-L644
 //
 // ENUM(marginal, normal)
 type MarginalState string
