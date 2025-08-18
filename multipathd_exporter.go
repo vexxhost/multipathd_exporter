@@ -48,7 +48,7 @@ func main() {
 	http.Handle(*metricsPath, promhttp.HandlerFor(reg, promhttp.HandlerOpts{Registry: reg}))
 	if *metricsPath != "/" && *metricsPath != "" {
 		landingConfig := web.LandingConfig{
-			Name:        "Multipath Exporter",
+			Name:        "MultipathD Exporter",
 			Description: "Prometheus Exporter for Multipath",
 			Version:     version.Info(),
 			Links: []web.LandingLinks{
