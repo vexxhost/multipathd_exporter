@@ -8,6 +8,8 @@ on:
       - reopened
       - synchronize
 
+permissions: {}
+
 jobs:
   conventional-commit:
     runs-on: ubuntu-latest
