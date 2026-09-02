@@ -1,6 +1,6 @@
 module github.com/vexxhost/multipathd_exporter
 
-go 1.24.5
+go 1.25
 
 require (
 	github.com/alecthomas/kingpin/v2 v2.4.0
@@ -8,7 +8,7 @@ require (
 	github.com/prometheus/common v0.67.5
 	github.com/prometheus/exporter-toolkit v0.15.0
 	github.com/stretchr/testify v1.11.1
-	k8s.io/utils v0.0.0-20260108192941-914a6e750570
+	k8s.io/utils v0.0.0-20260707023825-cf1189d6abe3
 )
 
 require (
